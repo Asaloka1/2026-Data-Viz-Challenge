@@ -1,65 +1,154 @@
-# 2026 USDA AMS/AAEA GSS Data Visualization Challenge 
+# Following the Value Chain: Understanding the Carolina Gold Rice Revival Through Farming and Milling Infrastructure
 
-For this challenge, participants are required to use the Local Food Data Warehouse, FAME 1.0 tool, and/or FAME 2.0 tool data. This page first describes where the FAME 2.0 data and user interface can be accessed. Second, it includes code associated with the 2024 version of the Local Food Data Warehouse, which underlies the [FAME 1.0 tool](https://localfoodeconomics.com/data/food-and-agriculture-data-explorer/). 
+##2026 Local Food Economics Data Visualization Challenge **
 
-# FAME 2.0 (Beta) Tool 
+*Co-organized by the USDA Agricultural Marketing Service (AMS) & the Agricultural & Applied Economics Association (AAEA)*
 
-The data for the FAME 2.0 (Beta) tool is available in the Data Viz Challenge Dropbox folder. The link to the FAME 2.0 user interface is available in the challenge rule document and should not be shared outside the challenge, as it is a Beta version. Code associated with this data is not available for the purposes of this challenge. Questions associated with data construction can be directed to Libby Christensen (libby.Christensen@colostate.edu). 
+**Assigned Sector:** Grain, Oilseed and Other Field Crops (Excluding Fiber)
 
-# USDA AMS - Data and Metrics (2024 Version of Local Food Data Warehouse, which underlies FAME 1.0 Tool)
-
-The Data and Metrics initiative is focused on fostering greater data efficacy and literacy across local and regional food systems by engaging project stakeholders in completing a gap analysis of existing local and regional food system data, fostering peer mentorship, and providing technical assistance. In part to accomplish these goals, teams of researchers and community partners reviewed and compiled available data using an equity lens into a single data warehouse to facilitate analysis and visualization.
-
-The initiative first began by reviewing the mission statements from national local and regional food system network leaders. Mission statements were organized into six categories -- labor, farm development/local food sales, business development/food infrastructure, community wealth/well-being, nutrition security/food access, and policy. For each of the categories, except for policy, the teams created document briefs identifying key related data indicators available nationwide at the county level. Creators of data warehouses, data explorers, and data dashboards encounter several challenges when it comes to the issue of equity. Reliance on existing data limited the ability to disaggregate data by dimensions of race, ethnicity, and citizenship status. As a result, we encourage the use of practices that invite community members to help contextualize data, share their personal stories, and amplify community solutions. The data warehouse is open-source and additional contributions are welcome, see below.
-
-## Goals of the Project
-
--   Support the utilization of data in program evaluation and decision making.
-
--   Improve access to data from an array of sources including government, NGOs, network partners, and researchers.
-
-## Data contributions
-
-We will accept suggestions of data to add to our data repository and website. Please follow instructions, as described on [localfoodeconomics.com](https://localfoodeconomics.com/data/recommendations/), to submit a request to add data.
-
-Accepted data contributions will be added one time per year. Visit [localfoodeconomics.com](https://localfoodeconomics.com/data/recommendations/) for criteria used to accept or reject suggestions.
-
-## Data and code
-
-A detailed description of the project and all of the data, including code, can be found in [U.S. Department of Agriculture, Agricultural Marketing Service: Data and Metrics](https://allison-bauman.quarto.pub/usda-ams-datametrics/). Code can also be found on the [FoodSystemsModeling Git Hub site](https://github.com/FoodSystemsModeling/DataWarehouse). This is not an active code base and we are not accepting contributions to the code. The code is made available for you to use in your own work if it is helpful.
-
-All data associated with this project can be found in our [FAME Dropbox folder](https://www.dropbox.com/sh/glpu4blo1y5qvfj/AAD3mc8jD1-VlIr47JVWF7sya?st=4qnsgs7f&dl=0). Data includes original data sets used and all final data that has been compiled (located in data_final). Links and description of the raw data are provided in the code files. Additional data from USDA Food and Nutrition Service (FNS), not available publicly elsewhere, is also available in this folder.
-
-Last update date: 5/03/2024
 
 ## Authors
+Atta Selorm Aloka  
+Alice Mukunzi  
+Peace Okafor  
 
--   Ashley Chaifetz
--   Becca B. R. Jablonski
--   Allison Bauman
--   Diana Broadaway
--   Libby Christensen
--   Tony Coble
--   Dar Wolnik
--   Hailey Edmondson
--   Mackenzie Gill
--   Hannah Leighton
--   Abby Long
--   Cullen Naumoff
--   Ela Rausch
--   Jairus Rossi
--   Megan Sankey
--   Samantha Schaffstall
--   Joshua Stoll
--   Americo Vega-Labiosa
--   Brett Wolff
--   Darlene Wolnick
--   Tim Woods
+## Mentors
+Yoko Kusunose  
+Annelise Straw  
+Angela Gardner   
 
-## License
+---
 
-This project is licensed under the Creative Commons Attribution 4.0 International license - see LICENSE.txt file for details.
+## Project Overview
 
-## Acknowledgements
+This project was developed for the 2026 USDA Agricultural Marketing Service Local Food Economics Data Visualization Challenge under the assigned sector **Grain, Oilseed and Other Field Crops (Excluding Fiber)**.
 
-We wish to thank Ela Rausch for her continued guidance and leadership with developing an equity framework for the local and regional food system data. We would also like to thank the Data Elevates team, especially Prem Durairaj and Xan Paxton, for their support with the development of the [Food and Agriculture Data Explorer](https://localfoodeconomics.com/data/).
+The analysis examines the relationship between rice production and rice milling infrastructure in Arkansas, North Carolina, and South Carolina. Using publicly available establishment data, the project visualizes where rice-related agricultural activity is reported and how production and processing infrastructure are distributed across regions.
+
+The project consists of two complementary visualizations. Figure 1 maps rice farming and rice milling establishments reported in publicly available data sources. Figure 2 illustrates the approximate transportation distances between rice production areas in the Carolinas and major milling infrastructure in Arkansas, highlighting how production and value-added processing may occur in different locations.
+
+---
+
+## Research Question
+
+How are rice production and rice milling establishments distributed across Arkansas and the Carolinas, and what do publicly available data reveal about the geographic relationship between production and processing infrastructure?
+
+---
+
+## Data Sources
+
+### USDA Agricultural Marketing Service (AMS) Local Food Data Warehouse
+
+The primary data source was the USDA AMS Local Food Data Warehouse.
+
+Establishment data were obtained through the Local Food Data Warehouse and are based on Bureau of Labor Statistics (BLS) Quarterly Census of Employment and Wages (QCEW) data.
+
+### Bureau of Labor Statistics (BLS) QCEW
+
+2024 annual average establishment counts were used for:
+
+- NAICS 111160 (Rice Farming)
+- NAICS 311212 (Rice Milling)
+
+### U.S. Census Bureau TIGER/Line Shapefiles
+
+County and state boundary files were obtained through the `tigris` R package using 2024 Census cartographic boundary files.
+
+### Supplemental Context
+
+Discussions with North Carolina Cooperative Extension personnel provided historical and operational context regarding rice production and processing activities in the Carolinas (North Carolina and South Carolina)
+
+These discussions were used only to assist interpretation of patterns observed in the public data and were not used as a primary data source.
+
+---
+
+## Figure Descriptions
+
+### Figure 1: Rice Production and Milling Infrastructure
+
+Figure 1 maps publicly reported rice farming establishments and rice milling establishments across Arkansas, North Carolina, and South Carolina.
+
+County shading represents the number of rice farming establishments reported in publicly available data. Milling establishments are represented by point symbols scaled according to the reported number of establishments.
+
+### Figure 2: Long-Haul Rice Milling Route
+
+Figure 2 illustrates the geographic separation between rice production areas in the Carolinas and major rice milling infrastructure in Arkansas.
+
+The map includes approximate distances of 845 miles and 750 miles between production and processing regions.
+
+---
+
+## Data Processing and Analysis
+
+### Rice Farming Layer
+
+Rice farming establishment data were imported from the Local Food Data Warehouse and standardized using county FIPS codes.
+
+### Rice Milling Layer
+
+Rice milling establishment data were imported from the Local Food Data Warehouse and standardized using county FIPS codes.
+
+### Geographic Processing
+
+Spatial layers were processed using the `sf`, `tigris`, and `maps` packages in R.
+
+### Visualization Design
+
+Visualizations were designed using `ggplot2`, `sf`, `grid`, and `gridExtra`.
+
+---
+
+## Software Requirements
+
+- R
+- tidyverse
+- sf
+- tigris
+- maps
+- gridExtra
+- grid
+
+---
+
+## File Structure
+
+```text
+README.md
+
+Figure1_Rice_Production_and_Milling_Infrastructure.R
+Figure2_Long_Haul_Rice_Milling_Route.R
+
+Figure1_Rice_Production_and_Milling_Infrastructure.png
+Figure2_Long_Haul_Rice_Milling_Route.png
+
+Figure1_Rice_Production_and_Milling_Infrastructure.pdf
+Figure2_Long_Haul_Rice_Milling_Route.pdf
+
+final_rice_farming_layer_2024.csv
+final_rice_milling_infrastructure_2024.csv
+
+One_Page_Narrative.pdf
+```
+
+---
+
+## Replication Instructions
+
+1. Place both CSV files in the project working directory.
+2. Install all required R packages. You can quickly verify and install them by running:
+   `install.packages(c("tidyverse", "sf", "tigris", "maps", "gridExtra"))`
+3. Run Figure 1 R script.
+4. Run Figure 2 R script.
+5. PNG and PDF outputs will be generated automatically.
+
+---
+
+## Use of Generative AI
+
+Generative AI was used only for limited technical assistance related to code troubleshooting and syntax verification. All research design, analytical decisions, data interpretation, visualizations, and written conclusions were developed by the project team.
+
+---
+
+## Recommended Citation
+
+Atta Selorm Aloka, Alice Mukunzi, and Peace Okafor. (2026). *Following the Value Chain: Understanding Carolina Gold Rice Production, Processing, and Value-Added Opportunities in the Carolinas*. 2026 USDA Agricultural Marketing Service Local Food Economics Data Visualization Challenge.
